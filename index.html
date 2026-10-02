@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин игрушек — Mina</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="logo">🧸 Mina</a>
+      <button class="cart-button" id="cartButton" type="button">
+        Корзина <span class="cart-button__count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container main">
+
+    <section class="catalog" aria-labelledby="catalogTitle">
+      <h1 class="catalog__title" id="catalogTitle">Каталог игрушек</h1>
+
+      <div class="products" id="products">
+        <article class="product-card">
+          <img class="product-card__image" src="imges/placeholder.png" alt="Плюшевый мишка">
+          <h2 class="product-card__title">Teddy bear</h2>
+          <p class="product-card__price">1 500 ₽</p>
+          <button class="btn btn--primary add-to-cart" type="button" data-id="1">
+            Добавить в корзину
+          </button>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="imges/placeholder.png" alt="Плюшевый заяц">
+          <h2 class="product-card__title">Teddy rabbit</h2>
+          <p class="product-card__price">1 500 ₽</p>
+          <button class="btn btn--primary add-to-cart" type="button" data-id="1">
+            Добавить в корзину
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <aside class="cart" aria-labelledby="cartTitle">
+      <h2 class="cart__title" id="cartTitle">Корзина</h2>
+      <ul class="cart__list" id="cartList">
+      </ul>
+      <p class="cart__total">
+        Итого: <span id="cartTotal">0</span> ₽
+      </p>
+      <button class="btn btn--order" id="checkoutButton" type="button">
+        Оформить заказ
+      </button>
+    </aside>
+
+  </main>
+
+  <dialog class="modal" id="orderModal">
+    <form class="order-form" id="orderForm" method="dialog">
+      <h2 class="order-form__title">Оформление заказа</h2>
+
+      <label class="order-form__field">
+        <span>Имя</span>
+        <input type="text" name="firstName" required>
+      </label>
+
+      <label class="order-form__field">
+        <span>Фамилия</span>
+        <input type="text" name="lastName" required>
+      </label>
+
+      <label class="order-form__field">
+        <span>Адрес доставки</span>
+        <input type="text" name="address" required>
+      </label>
+
+      <label class="order-form__field">
+        <span>Контактный телефон</span>
+        <input type="tel" name="phone" required>
+      </label>
+
+      <div class="order-form__actions">
+        <button type="button" class="btn btn--ghost" id="cancelOrder">
+          Отмена
+        </button>
+        <button type="submit" class="btn btn--primary">
+          Создать заказ
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Магазин игрушек Mina</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
