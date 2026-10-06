@@ -1,0 +1,104 @@
+/* шапка сайта, прилипает к верху при прокрутке */
+.header {
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* внутри шапки логотип слева, кнопка корзины справа */
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* логотип магазина */
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* кнопка корзины в шапке, иконка и цифра рядом */
+.cart-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* иконка корзины */
+.cart-button__icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* цифра сколько товаров в корзине */
+.cart-button__count {
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* низ сайта */
+.footer {
+  margin-top: 60px;
+  padding: 24px 0;
+  border-top: 2px solid var(--color-border);
+  font-size: 13px;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* основная часть, каталог и корзина стоят в ряд */
+.main {
+  display: flex;
+  gap: var(--gap);
+  align-items: flex-start;
+  padding: 32px 20px;
+}
+
+/* каталог занимает всё свободное место */
+.catalog {
+  flex: 1;
+  min-width: 0;
+}
+
+/* корзина справа фиксированной ширины, тоже прилипает при прокрутке */
+.cart {
+  width: 320px;
+  flex-shrink: 0;
+  border: 2px solid var(--color-border);
+  padding: 16px;
+  position: sticky;
+  top: 88px;
+}
+
+/* заголовок каталога */
+.catalog__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* заголовок корзины */
+.cart__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

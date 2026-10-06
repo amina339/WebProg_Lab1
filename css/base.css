@@ -1,3 +1,4 @@
+/* переменные цветов и шрифтов */
 :root {
   --color-bg: #ffffff;
   --color-text: #000000;
@@ -9,12 +10,14 @@
   --gap: 24px;
 }
 
+/* чтобы padding и border не увеличивали ширину блоков */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* базовые настройки страницы */
 body {
   margin: 0;
   font-family: var(--font);
@@ -24,21 +27,25 @@ body {
   line-height: 1.5;
 }
 
+/* картинки не вылезают за пределы родителя */
 img {
   max-width: 100%;
   display: block;
 }
 
+/* кнопки наследуют шрифт и показывают курсор-руку */
 button {
   font: inherit;
   cursor: pointer;
   font-family: var(--font);
 }
 
+/* поля ввода тоже используют общий шрифт */
 input {
   font-family: var(--font);
 }
 
+/* контейнер центрирует контент и не даёт растянуться на весь экран */
 .container {
   width: 100%;
   max-width: var(--container);
