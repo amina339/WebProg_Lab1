@@ -1,0 +1,42 @@
+/* Адаптив */
+
+/* планшет, до 1024px */
+@media (max-width: 1024px) {
+  .cart {
+    width: 250px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* телефон, до 768px */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .cart {
+    width: 100%;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    padding: 10px 15px;
+  }
+
+  .main {
+    padding: 15px;
+  }
+}
+
+/* телефон, до 480px */
+@media (max-width: 480px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
