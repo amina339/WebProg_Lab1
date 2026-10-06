@@ -1,0 +1,167 @@
+/* Оформление кнопки корзины в шапке */
+.cart-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border: 2px solid #000;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* размер иконки внутри кнопки корзины */
+.cart-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Сетка товаров */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* три колонки одинаковой ширины */
+  gap: 20px; /* расстояние между карточками */
+}
+
+/* одна карточка товара */
+.product-card {
+  border: 2px solid #000;
+  padding: 15px;
+  text-align: center;
+}
+
+/* картинка товара */
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* название товара */
+.product-card h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* цена товара */
+.product-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* кнопка "добавить в корзину" внутри карточки */
+.product-card button {
+  padding: 8px 15px;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+/* список товаров в корзине */
+.cart ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+/* один товар в корзине */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* название товара в корзине занимает все место */
+.cart-item .title {
+  flex: 1;
+}
+
+/* кнопки + и - для количества */
+.cart-item .qty-btn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* кнопка удаления товара (крестик) */
+.cart-item .remove-btn {
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* общая сумма в корзине */
+.cart .total {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  margin: 15px 0;
+}
+
+/* кнопка "оформить заказ" */
+.order-btn {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #000;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Модальное окно */
+.modal {
+  border: 2px solid #000;
+  padding: 20px;
+  width: 400px;
+}
+
+/* затемнение фона за модалкой */
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5); /* полупрозрачный чёрный */
+}
+
+/* заголовок в модалке */
+.modal h2 {
+  margin-bottom: 15px;
+}
+
+/* поля ввода в модалке */
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #000;
+  font-size: 14px;
+}
+
+/* блок с кнопками в модалке */
+.modal .buttons {
+  display: flex;
+  justify-content: flex-end; /* кнопки прижимаются вправо */
+  gap: 10px;
+}
+
+/* кнопки в модалке */
+.modal button {
+  padding: 8px 15px;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* кнопка отправки формы (например "подтвердить") */
+.modal button[type="submit"] {
+  background: #000;
+  color: #fff;
+}
