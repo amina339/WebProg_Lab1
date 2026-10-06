@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Магазин игрушек — Mina</title>
+  <!-- подключение стилей -->
   <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
 
+  <!-- шапка сайта, остаётся сверху при прокрутке -->
   <header class="header">
     <div class="container header__inner">
+      <!-- логотип и ссылка на главную -->
       <h1 href="/" class="logo">🧸 Mina</h1>
+      <!-- кнопка корзины -->
       <button class="cart-button" id="cartButton" type="button">
         Корзина <span class="cart-button__count" id="cartCount">0</span>
       </button>
@@ -19,9 +23,11 @@
 
   <main class="container main">
 
+    <!-- каталог товаров -->
     <section class="catalog" aria-labelledby="catalogTitle">
       <h1 class="catalog__title" id="catalogTitle">Каталог игрушек</h1>
 
+      <!-- карточки товаров -->
       <div class="products" id="products">
         <article class="product-card">
           <img class="product-card__image" src="images/placeholder.png" alt="Плюшевый мишка">
@@ -42,13 +48,16 @@
       </div>
     </section>
 
+    <!-- корзина, справа от каталога -->
     <aside class="cart" aria-labelledby="cartTitle">
       <h2 class="cart__title" id="cartTitle">Корзина</h2>
       <ul class="cart__list" id="cartList">
       </ul>
+      <!-- итоговая сумма -->
       <p class="cart__total">
         Итого: <span id="cartTotal">0</span> ₽
       </p>
+      <!-- при нажатии открывается модалка с формой -->
       <button class="btn btn--order" id="checkoutButton" type="button">
         Оформить заказ
       </button>
@@ -60,6 +69,7 @@
     <form class="order-form" id="orderForm" method="dialog">
       <h2 class="order-form__title">Оформление заказа</h2>
 
+      <!-- поля формы, все обязательные -->
       <label class="order-form__field">
         <span>Имя</span>
         <input type="text" name="firstName" required>
@@ -80,6 +90,7 @@
         <input type="tel" name="phone" required>
       </label>
 
+       <!-- кнопки внизу формы -->
       <div class="order-form__actions">
         <button type="button" class="btn btn--ghost" id="cancelOrder">
           Отмена
@@ -91,12 +102,14 @@
     </form>
   </dialog>
 
+  <!-- нижняя надпись о компании -->
   <footer class="footer">
     <div class="container">
       <p>© 2026 Магазин игрушек Mina</p>
     </div>
   </footer>
 
+  <!-- подключение js в самом конце, после загрузки html -->
   <script src="js/main.js"></script>
 </body>
 </html>
