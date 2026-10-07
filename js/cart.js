@@ -62,3 +62,12 @@ function decreaseQty(id) {
   }
 }
 
+// считаем общую сумму корзины
+function getTotal() {
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price * item.qty;
+  });
+  return total;
+}
+
