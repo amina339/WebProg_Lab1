@@ -59,19 +59,17 @@ orderForm.addEventListener('submit', (event) => {
 
 // выводит все карточки товаров на страницу
 function renderProducts() {
-  let html = '';
-  products.forEach(product => {
-    html += createCard(product);
-  });
-  productsContainer.innerHTML = html;
+  productsContainer.innerHTML = ''; 
 
-  // вешаем обработчик на все кнопки "добавить в корзину"
-  const buttons = document.querySelectorAll('.add-to-cart');
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const id = Number(button.dataset.id);
+  products.forEach(product => {
+    const card = createCard(product);
+
+    card.querySelector('.add-to-cart').addEventListener('click', (event) => {
+      const id = Number(event.currentTarget.dataset.id);
       addToCart(id);
     });
+
+    productsContainer.appendChild(card); 
   });
 }
 
