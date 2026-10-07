@@ -23,18 +23,6 @@
   text-decoration: none;
 }
 
-/* кнопка корзины в шапке, иконка и цифра рядом */
-.cart-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--color-text);
-  border: 2px solid var(--color-border);
-  padding: 8px 14px;
-  font-weight: 600;
-  font-size: 14px;
-}
 
 /* иконка корзины */
 .cart-button__icon {
@@ -61,12 +49,8 @@
   color: var(--color-muted);
 }
 
-/* основная часть, каталог и корзина стоят в ряд */
 .main {
-  display: flex;
-  gap: var(--gap);
-  align-items: flex-start;
-  padding: 32px 20px;
+  padding: 20px 30px;
 }
 
 /* каталог занимает всё свободное место */
@@ -75,30 +59,12 @@
   min-width: 0;
 }
 
-/* корзина справа фиксированной ширины, тоже прилипает при прокрутке */
-.cart {
-  width: 320px;
-  flex-shrink: 0;
-  border: 2px solid var(--color-border);
-  padding: 16px;
-  position: sticky;
-  top: 88px;
-}
 
 /* заголовок каталога */
 .catalog__title {
   font-size: 24px;
   font-weight: 700;
   margin: 0 0 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* заголовок корзины */
-.cart__title {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0 0 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
