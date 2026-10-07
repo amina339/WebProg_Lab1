@@ -15,7 +15,7 @@
 
 ## Технологии
 
-- HTML5
-- CSS3 (Grid, Flexbox, медиазапросы)
-- JavaScript (чистый, без фреймворков)
+- HTML
+- CSS 
+- JavaScript 
 - localStorage
