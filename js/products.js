@@ -1,12 +1,16 @@
+// создаём одну карточку товара из шаблона
 function createCard(product) {
-  return `
-    <article class="product-card">
-      <img class="product-card__image" src="${product.img}" alt="${product.title}">
-      <h2 class="product-card__title">${product.title}</h2>
-      <p class="product-card__price">${product.price} ₽</p>
-      <button class="btn add-to-cart" type="button" data-id="${product.id}">
-        Добавить в корзину
-      </button>
-    </article>
-  `;
+  const template = document.getElementById('cardTemplate');
+  const card = template.content.cloneNode(true);
+
+  // заполняем поля данными товара
+  const img = card.querySelector('.product-card__image');
+  img.src = product.img;
+  img.alt = product.title;
+
+  card.querySelector('.product-card__title').textContent = product.title;
+  card.querySelector('.product-card__price').textContent = product.price + ' ₽';
+  card.querySelector('.add-to-cart').dataset.id = product.id;
+
+  return card;
 }
