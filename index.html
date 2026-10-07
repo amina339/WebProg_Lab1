@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="css/blocks_positions.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
+<div class="toast" id="toast"></div>
 <body>
 
   <!-- шапка сайта, остаётся сверху при прокрутке -->
@@ -36,24 +38,7 @@
       <h1 class="catalog__title" id="catalogTitle">Каталог игрушек</h1>
 
       <!-- карточки товаров -->
-      <div class="products" id="products"> 
-        <article class="product-card">
-          <img class="product-card__image" src="images/placeholder.png" alt="Плюшевый мишка">
-          <h2 class="product-card__title">Teddy bear</h2>
-          <p class="product-card__price">1 500 ₽</p>
-          <button class="btn btn--primary add-to-cart" type="button" data-id="1">
-            Добавить в корзину
-          </button>
-        </article>
-        <article class="product-card">
-          <img class="product-card__image" src="images/placeholder.png" alt="Плюшевый заяц">
-          <h2 class="product-card__title">Teddy rabbit</h2>
-          <p class="product-card__price">1 500 ₽</p>
-          <button class="btn btn--primary add-to-cart" type="button" data-id="2">
-            Добавить в корзину
-          </button>
-        </article>
-      </div>
+      <div class="products" id="products"></div>
     </section>
 
   </main>
@@ -116,6 +101,7 @@
   </footer>
 
   <!-- подключение js в самом конце, после загрузки html -->
+  <script src="js/data.js"></script>
   <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/main.js"></script>
