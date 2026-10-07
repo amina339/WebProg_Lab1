@@ -71,3 +71,45 @@ function getTotal() {
   return total;
 }
 
+// выводим содержимое корзины на страницу
+function renderCart() {
+  cartList.innerHTML = '';
+
+  if (cart.length === 0) {
+    cartList.innerHTML = '<li class="cart-empty">Корзина пуста</li>';
+  } else {
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'cart-item';
+      li.innerHTML = `
+        <span class="title">${item.title}</span>
+        <button class="qty-btn decrease" data-id="${item.id}">−</button>
+        <span class="qty">${item.qty}</span>
+        <button class="qty-btn increase" data-id="${item.id}">+</button>
+        <button class="remove-btn" data-id="${item.id}">×</button>
+      `;
+      cartList.appendChild(li);
+    });
+
+    // обработчики кнопок корзины
+    document.querySelectorAll('.increase').forEach(btn => {
+      btn.addEventListener('click', () => increaseQty(Number(btn.dataset.id)));
+    });
+    document.querySelectorAll('.decrease').forEach(btn => {
+      btn.addEventListener('click', () => decreaseQty(Number(btn.dataset.id)));
+    });
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', () => removeFromCart(Number(btn.dataset.id)));
+    });
+  }
+
+  // обновляем сумму
+  cartTotal.textContent = getTotal();
+
+  // обновляем счётчик корзины
+  let count = 0;
+  cart.forEach(item => {
+    count += item.qty;
+  });
+  cartCount.textContent = count;
+}
