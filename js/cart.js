@@ -75,9 +75,14 @@ function getTotal() {
 function renderCart() {
   cartList.innerHTML = '';
 
-  if (cart.length === 0) {
-    cartList.innerHTML = '<li class="cart-empty">Корзина пуста</li>';
+    if (cart.length === 0) {
+    const empty = document.createElement('li');
+    empty.className = 'cart-empty';
+    empty.textContent = 'Корзина пуста';
+    cartList.appendChild(empty);
   } else {
+    const template = document.getElementById('cartItemTemplate');
+    
     cart.forEach(item => {
       const li = document.createElement('li');
       li.className = 'cart-item';
