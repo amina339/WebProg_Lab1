@@ -11,14 +11,14 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-<div class="toast" id="toast"></div>
+
 <body>
 
   <!-- шапка сайта, остаётся сверху при прокрутке -->
   <header class="header">
     <div class="container header__inner">
       <!-- логотип и ссылка на главную -->
-      <div href="/" class="logo">🧸 Mina</div>
+      <div class="logo">🧸 Mina</div>
       <!-- кнопка корзины -->
       <button class="cart-button" id="cartButton" type="button" aria-label="Открыть корзину">
         <svg class="cart-button__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -60,17 +60,17 @@
 
       <label class="order-form__field">
         <span>Улица</span>
-        <input type="text" name="address" required>
+        <input type="text" name="street" required>
       </label>
 
       <label class="order-form__field">
         <span>Подъезд</span>
-        <input type="text" name="address" required>
+        <input type="text" name="entrance" required>
       </label>
 
       <label class="order-form__field">
         <span>Квартира</span>
-        <input type="text" name="address" required>
+        <input type="text" name="apartment" required>
       </label>
 
       <label class="order-form__field">
@@ -109,6 +109,29 @@
       <p>© 2026 Магазин игрушек Mina</p>
     </div>
   </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <template id="cardTemplate">
+    <article class="product-card">
+      <img class="product-card__image" alt="">
+      <h2 class="product-card__title"></h2>
+      <p class="product-card__price"></p>
+      <button class="btn add-to-cart" type="button">
+        Добавить в корзину
+      </button>
+    </article>
+  </template>
+
+  <template id="cartItemTemplate">
+    <li class="cart-item">
+      <span class="title"></span>
+      <button class="qty-btn decrease">−</button>
+      <span class="qty"></span>
+      <button class="qty-btn increase">+</button>
+      <button class="remove-btn">×</button>
+    </li>
+  </template>
 
   <!-- подключение js в самом конце, после загрузки html -->
   <script src="js/data.js"></script>
