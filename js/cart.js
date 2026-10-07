@@ -81,15 +81,32 @@ function renderCart() {
     cart.forEach(item => {
       const li = document.createElement('li');
       li.className = 'cart-item';
-      li.innerHTML = `
-        <span class="title">${item.title}</span>
-        <button class="qty-btn decrease" data-id="${item.id}">−</button>
-        <span class="qty">${item.qty}</span>
-        <button class="qty-btn increase" data-id="${item.id}">+</button>
-        <button class="remove-btn" data-id="${item.id}">×</button>
-      `;
-      cartList.appendChild(li);
-    });
+      const title = document.createElement('span');
+        title.className = 'title';
+        title.textContent = item.title;
+
+        const decrease = document.createElement('button');
+        decrease.className = 'qty-btn decrease';
+        decrease.dataset.id = item.id;
+        decrease.textContent = '−';
+
+        const qty = document.createElement('span');
+        qty.className = 'qty';
+        qty.textContent = item.qty;
+
+        const increase = document.createElement('button');
+        increase.className = 'qty-btn increase';
+        increase.dataset.id = item.id;
+        increase.textContent = '+';
+
+        const remove = document.createElement('button');
+        remove.className = 'remove-btn';
+        remove.dataset.id = item.id;
+        remove.textContent = '×';
+
+        li.append(title, decrease, qty, increase, remove);
+            cartList.appendChild(li);
+            });
 
     // обработчики кнопок корзины
     document.querySelectorAll('.increase').forEach(btn => {
