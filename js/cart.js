@@ -38,3 +38,27 @@ function removeFromCart(id) {
   renderCart();
 }
 
+// увеличивает количество товара на 1
+function increaseQty(id) {
+  const item = cart.find(i => i.id === id);
+  if (item) {
+    item.qty += 1;
+    saveCart();
+    renderCart();
+  }
+}
+
+// уменьшает количество на 1. Если станет 0 — удаляем
+function decreaseQty(id) {
+  const item = cart.find(i => i.id === id);
+  if (item) {
+    item.qty -= 1;
+    if (item.qty <= 0) {
+      removeFromCart(id);
+    } else {
+      saveCart();
+      renderCart();
+    }
+  }
+}
+
