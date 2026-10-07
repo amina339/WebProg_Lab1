@@ -40,7 +40,14 @@ cancelOrder.addEventListener('click', () => {
 // обработка формы заказа
 orderForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  alert('Заказ создан!');
+  function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+  // уведомление о заказе на странице сразу
+  showToast('Заказ создан!');
 
   cart = [];
   saveCart();
