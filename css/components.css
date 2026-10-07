@@ -7,6 +7,9 @@
 .cart-modal .cart__list {
   max-height: 300px;
   overflow-y: auto;
+  list-style: none;  
+  padding: 0;        
+  margin: 0;         
 }
 
 .modal__title {
